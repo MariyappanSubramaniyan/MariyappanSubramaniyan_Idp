@@ -1,3 +1,3 @@
-def add(m,n):
-    return m+n 
+def add(s,n):
+    return s+n 
 add()
