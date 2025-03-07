@@ -1,1 +1,1 @@
-GREETING FILE
+Welcome!
