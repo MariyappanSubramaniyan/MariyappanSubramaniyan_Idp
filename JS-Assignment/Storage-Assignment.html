@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Score Tracker</title>
+</head>
+<body>
+  <h2>Local Score: <span id="local">0</span></h2>
+  <h2>Session Score: <span id="session">0</span></h2>
+  <button id="inc">Increment</button>
+
+  <script>
+    let localScore = localStorage.getItem("local") || 0;
+    let sessionScore = sessionStorage.getItem("session") || 0;
+
+    document.getElementById("local").textContent = localScore;
+    document.getElementById("session").textContent = sessionScore;
+
+    document.getElementById("inc").onclick = () => {
+      localScore++;
+      sessionScore++;
+
+      localStorage.setItem("local", localScore);
+      sessionStorage.setItem("session", sessionScore);
+
+      document.getElementById("local").textContent = localScore;
+      document.getElementById("session").textContent = sessionScore;
+    };
+  </script>
+</body>
+</html>
