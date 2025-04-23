@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #f3ecec;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 800px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  height: 900px;
+  overflow: hidden;  /* no scrollbars will appear, and the overflowed content is not visible. */
+  padding: 20px;
+}
+
+.sidebar {
+  width: 250px;
+  overflow-y: auto;  /* adds a vertical scrollbar only if the content overflows vertically */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.main {
+  flex: 1; /* makes a flex item grow to fill available space equally with other */
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+
+h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: left;
+}
+
+.search-container {
+  position: relative;  /* positions an element relative to its normal position */
+  width: 100%;
+  max-width: 280px;
+  margin-bottom: 20px;
+}
+.menu-header {
+  position: sticky;  /* keeps an element in its normal flow until a scroll threshold, */
+  top: 0;
+  background-color: white;
+  z-index: 100;  /* sets the stack order of an element—higher values appear in front of lower ones when elements overlap. */
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  margin-left: 15px;
+}
+
+.menu-scroll {
+  overflow-y: auto;
+  padding: 10px;
+  flex: 1;
+}
+
+.search-menu,
+.search-table {
+  width: 100%;
+  padding: 6px 30px 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+  font-size: 13px;
+  outline: none; /* removes the default outline (usually a border) that browsers add */
+}
+
+.search-menu:focus,
+.search-table:focus {
+  border-color: #007bff;
+}
+
+.clear-search {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
+  border-radius: 50%;
+  color: #aaa;
+  background: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+.clear-search:hover {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.tables-container,
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.table-card,
+.menu-card {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+.table-card,
+.menu-card:hover {
+cursor: pointer;
+}
+
+.table-card h3,
+.menu-card h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.table-card p,
+.menu-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.table-card .rs,
+.table-card .items,
+.menu-card .price {
+  font-weight: bold;
+  color: #333;
+}
+
+.table-card.active {
+  background-color: #e0f0ff;
+  border: 2px solid #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 2px 10px;
+  border-radius: 50%;
+  background-color: #eee;
+}
+
+.order-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-row.header {
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+
+
+.order-row span,
+.order-row input {
+  flex: 1;
+  text-align: center;
+}
+
+.order-row.header span {
+  font-weight: bold;
+}
+
+.order-row span:first-child {
+  flex: 0.5; /* S.No */
+}
+
+.order-row span:nth-child(2) {
+  flex: 2; /* Item Name */
+}
+
+.order-row span.unit-price,
+.order-row span:nth-child(3) {
+  flex: 1; /* Price */
+}
+
+.order-row input.qty-input {
+  flex: 1; /* Servings */
+  max-width: 60px;
+  margin: 0 auto;
+}
+
+.order-row span.delete-btn {
+  flex: 0.8;
+  text-align: center;
+}
+.qty-input {
+  width: 60px;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  outline: none;
+}
+
+
+.delete-btn {
+  cursor: pointer;
+  font-size: 18px;
+  color: red;
+}
+
+.total-amount {
+  text-align: right;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+
+.page-header {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.page-footer {
+  width: 100%;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+  color: #555;
+  background-color: #f1f1f1;
+  margin-top: auto;
+  border-top: 1px solid #ccc;
+}
