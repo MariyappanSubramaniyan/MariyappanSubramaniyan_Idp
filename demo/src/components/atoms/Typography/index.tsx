@@ -1,11 +1,7 @@
-import { Typography,TypographyProps } from "@mui/material";
+import { Typography as MuiTypography, TypographyProps } from '@mui/material';
 
-interface ITypography extends TypographyProps{
-    text:string
-}
-
-const TextField= ({text,...props}:ITypography)=>{
-    return<Typography {...props}>{text} </Typography>
+const Typography = (props: TypographyProps) => {
+  return <MuiTypography {...props} />;
 };
 
-export default TextField;
+export default Typography;
