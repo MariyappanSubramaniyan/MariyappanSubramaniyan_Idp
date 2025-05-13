@@ -1,0 +1,17 @@
+.congratsBanner {
+  width: 700px;
+  height: 259px;
+  position: absolute;
+  left: 430px;
+  top:700px;
+  border-radius: 12px;
+  background-image: url("../../../assets/CongratsBanner.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  gap: 20px;
+}

@@ -1,0 +1,20 @@
+/* .heading {
+  font-family: Gilroy;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.5%;
+  color: #ffffff;
+} */
+
+.heading {
+  width: 276;
+  height: 58;
+  font-family: Gilroy;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: -0.5%;
+  color: #e8e7f0;
+  line-height: 30px;
+}

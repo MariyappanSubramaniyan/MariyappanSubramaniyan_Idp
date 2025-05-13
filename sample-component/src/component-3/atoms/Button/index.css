@@ -1,0 +1,19 @@
+.LearnMore button {
+  width: 163px;
+  height: 59px;
+  border: 1px solid #E8E8E9;
+  border-radius: 12px;
+  padding: 20px 40px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: white; 
+  font-size: 14px; 
+  cursor: pointer;
+}
+
+.LearnMore button:focus {
+  outline: none;
+}

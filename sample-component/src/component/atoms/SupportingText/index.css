@@ -1,0 +1,27 @@
+/* .supporting-text {
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  
+} */
+
+.supporting-text {
+  width: 276;
+  height: 44;
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #b2a6a6;
+}
+span {
+  font-family: Gilroy;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color:white;
+}

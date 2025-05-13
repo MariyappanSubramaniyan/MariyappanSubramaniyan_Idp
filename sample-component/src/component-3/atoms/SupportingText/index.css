@@ -1,0 +1,24 @@
+.text-container {
+  display: flex;
+  width: 277px;
+  height: 44px;
+  align-items: left;
+}
+
+.text-container p {
+  font-family: Gilroy;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #e6d4d4;
+}
+
+.text-container span {
+  font-family: Gilroy;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  color: #f6f2f2;
+}
