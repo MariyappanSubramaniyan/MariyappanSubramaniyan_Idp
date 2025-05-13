@@ -17,7 +17,6 @@ import theme from '../../../theme/theme';
 const StyledBox = styled(Box)({
   width: theme.custom.dimensions.CANDIDATE_TABLE_WIDTH,
   height: theme.custom.dimensions.CANDIDATE_TABLE_HEIGHT,
-  position: 'absolute',
   top: theme.custom.position.TOP,
   left: theme.custom.position.LEFT,
   borderRadius: theme.shape.borderRadius,
@@ -25,12 +24,8 @@ const StyledBox = styled(Box)({
 });
 
 const StyledTypography = styled(Typography)({
-  fontSize: theme.custom.typography.TITLE_FONT_SIZE,
-  fontWeight: theme.custom.typography.TITLE_FONT_WEIGHT,
-  fontFamily: theme.custom.typography.TITLE_FONT_FAMILY,
-  fontStyle: theme.custom.typography.TITLE_FONT_STYLE,
   marginBottom: theme.spacing(2),
-  marginLeft:theme.spacing(2),
+  marginLeft: theme.spacing(2),
   marginTop: theme.spacing(5),
   color: theme.palette.text.primary,
 });
@@ -38,7 +33,7 @@ const StyledTypography = styled(Typography)({
 const CandidatesTable = () => {
   return (
     <StyledBox>
-     <StyledTypography variant="candidateTitle" gutterBottom>
+      <StyledTypography variant="candidateTitle" gutterBottom>
         {TABLE_TITLE}
       </StyledTypography>
       <TableContainer component={Paper}>
