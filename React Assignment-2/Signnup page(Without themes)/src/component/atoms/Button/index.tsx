@@ -1,8 +1,5 @@
-import { Button, ButtonProps } from "@mui/material";
-
-interface IButtonProps extends ButtonProps {
-  label: string;
-}
+import { Button } from "@mui/material";
+import { IButtonProps } from "@/utils/interface";
 
 const ButtonAtom = ({ label, ...props }: IButtonProps) => {
   return <Button {...props}>{label}</Button>;

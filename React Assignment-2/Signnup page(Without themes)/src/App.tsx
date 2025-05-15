@@ -1,10 +1,10 @@
 import "./App.css";
-import SignupPageTemplate from "./component/template/SignupTemplate";
+import SignupPage from "./pages/index";
 
 function App() {
   return (
     <>
-      <SignupPageTemplate/>
+      <SignupPage/>
     </>
   );
 }

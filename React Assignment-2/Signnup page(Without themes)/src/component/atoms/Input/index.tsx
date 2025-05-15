@@ -1,18 +1,8 @@
-import React from 'react';
 import { TextField, InputAdornment } from '@mui/material';
-import Image from '../../atoms/Images';
+import Image from '@component/atoms/Images';
+import { IInputFieldProps } from '@utils/interface';
 
-interface IInputFieldProps {
-  placeholder: string;
-  value?: string;
-  startImageSrc?: string;
-  endImageSrc?: string;
-  type?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  endImageAction?: () => void;
-}
-
-const InputField = ({placeholder,value,startImageSrc,endImageSrc,type = 'text',onChange,endImageAction,
+const InputField = ({placeholder, value, startImageSrc, endImageSrc, type = 'text', onChange, endImageAction,
   ...props}: IInputFieldProps) => {
   return (
     <TextField

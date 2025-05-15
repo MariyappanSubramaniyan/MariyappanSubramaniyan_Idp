@@ -1,68 +1,19 @@
 import { useState } from "react";
-import InputField from "../../atoms/Input";
-import { styled } from "@mui/material/styles";
-import NameIcon from "../../../assets/icons/smile.svg";
-import EmailIcon from "../../../assets/icons/Email.svg";
-import PasswordIcon from "../../../assets/icons/lock.svg";
-import EyeIcon from "../../../assets/icons/eye.svg";
-import ButtonAtom from "../../atoms/Button";
-import DividerAtom from "../../atoms/Divider";
-import SocialButtonOrganism from "../SocialButtonGroup";
-import AccountLoginMolecule from "../../molecules/AccountLoginMolecule";
-import SignUpMolecule from "../../molecules/SignUpHeader";
+import {
+  SignUpFormContainer,
+  SignUpButton,
+  SignUpDivider,
+  SignUpInputField,
+} from "./index";
+import SocialButtonOrganism from "@component/organisms/SocialButtonGroup";
+import AccountLoginMolecule from "@component/molecules/AccountLoginMolecule";
+import SignUpHeaderMolecule from "@component/molecules/SignUpHeader";
+import NameIcon from "@assets/icons/smile.svg";
+import EmailIcon from "@assets/icons/Email.svg";
+import PasswordIcon from "@assets/icons/lock.svg";
+import EyeIcon from "@assets/icons/eye.svg";
 
-const SignUpFormContainer = styled("div")({
-  display: "flex",
-  flexDirection: "column",
-  gap: "20px",
-  width: "434px",
-  padding: "20px",
-  boxSizing: "border-box",
-  marginRight: "200px",
-});
-
-const StyledButton = styled(ButtonAtom)({
-  width: "400px",
-  height: "60px",
-  borderRadius: "12px",
-  marginTop: "20px",
-  textTransform: "none",
-});
-
-const StyledDivider = styled(DividerAtom)({
-  borderTopColor: "#413F4D",
-  color: '#fff',
-  '&::before, &::after': {
-    borderTopColor: "#413F4D",
-  },
-});
-
-const StyledInputField = styled(InputField)({
-  width: '100%',
-  backgroundColor: 'transparent',
-  borderRadius: '12px',
-  '& .MuiInputBase-root': {
-    color: '#C9C8CC',
-    borderRadius: '12px',
-    padding: '0 12px',
-    height: '56px',
-    '& fieldset': {
-      borderColor: '#413F4D',
-      borderRadius: '12px',
-    },
-    '&:hover fieldset': {
-      borderColor: '#413F4D',
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: '#413F4D',
-      boxShadow: 'none',
-    },
-  },
-  '& .MuiInputBase-input::placeholder': {
-    color: '#C9C8CC',
-    opacity: 0.7,
-  },
-});
+import { SIGNUP_PLACEHOLDERS } from "@utils/constants";
 
 const SignUpFormOrganism = () => {
   const [name, setName] = useState("");
@@ -72,34 +23,30 @@ const SignUpFormOrganism = () => {
 
   const isButtonDisabled = !name.trim() || !email.trim() || !password.trim();
 
-  const handleTogglePasswordVisibility = () => {
-    setShowPassword((prev) => !prev);
-  };
-
   return (
     <SignUpFormContainer>
-      <SignUpMolecule />
-      <StyledInputField
-        placeholder="Johndoe"
+      <SignUpHeaderMolecule />
+      <SignUpInputField
+        placeholder={SIGNUP_PLACEHOLDERS.name}
         startImageSrc={NameIcon}
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
-      <StyledInputField
-        placeholder="Johndoe@gmail.com"
+      <SignUpInputField
+        placeholder={SIGNUP_PLACEHOLDERS.email}
         startImageSrc={EmailIcon}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <StyledInputField
-        placeholder="••••••••"
+      <SignUpInputField
+        placeholder={SIGNUP_PLACEHOLDERS.password}
         startImageSrc={PasswordIcon}
         endImageSrc={EyeIcon}
-        endImageAction={handleTogglePasswordVisibility}
         type={showPassword ? "text" : "password"}
+        endImageAction={() => setShowPassword((prev) => !prev)}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <StyledButton
+      <SignUpButton
         label="Sign Up"
         variant="contained"
         disabled={isButtonDisabled}
@@ -108,7 +55,7 @@ const SignUpFormOrganism = () => {
           color: "#fff",
         }}
       />
-      <StyledDivider myCustomProp="Or" />
+      <SignUpDivider myCustomProp="Or" />
       <SocialButtonOrganism />
       <AccountLoginMolecule />
     </SignUpFormContainer>
